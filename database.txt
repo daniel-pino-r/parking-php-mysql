@@ -1,7 +1,12 @@
 
-// CREAR TABLAS DB PARQUEADERO
 
-PASO 1 CREAR TABLAS
+
+// PASO 1 CREAR BASE DE DATOS
+
+        create database parking;
+        use parking;
+
+// PASO 2 CREAR TABLAS        
 
         CREATE TABLE `validar` (  
             `id` int(11) AUTO_INCREMENT PRIMARY KEY, 
@@ -36,9 +41,9 @@ PASO 1 CREAR TABLAS
         );
 
 
-PASO 2 INSERTAR PUESTOS
+// PASO 3 INSERTAR PUESTOS
 
-        INSERT INTO `registro` (`id_registro`, `datetime_registro`, `lugar_ registro`, `id_vehiculos`, `disponibilidad`) 
+        INSERT INTO `registro` (`id_registro`, `datetime_registro`, `lugar_registro`, `id_vehiculos`, `disponibilidad`) 
 
         VALUES (NULL, '2022-11-09 00:00:00', '1', NULL, 'disponible'),
             (NULL, '2022-11-09 00:00:00', '2', NULL, 'disponible'),

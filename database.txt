@@ -5,23 +5,23 @@ PASO 1 CREAR TABLAS
 
         CREATE TABLE `validar` (  
             `id` int(11) AUTO_INCREMENT PRIMARY KEY, 
-            `nombre ` varchar(45) NOT NULL , 
-            `contra ` varchar(45) NOT NULL
+            `nombre_validar` varchar(45) NOT NULL , 
+            `contra_validar` varchar(45) NOT NULL
         );
 
 
         CREATE TABLE `vehiculos` (  
             `id_vehiculos` int(11) AUTO_INCREMENT PRIMARY KEY, 
-            `tipo` varchar(45) NOT NULL , 
-            `placa` varchar(45) NOT NULL,
-            `nombre` varchar(45) NOT NULL
+            `tipo_vehiculos` varchar(45) NOT NULL , 
+            `placa_vehiculos` varchar(45) NOT NULL,
+            `nombre_vehiculos` varchar(45) NOT NULL
         );
 
         CREATE TABLE `registro` (  
-            `id_ registro` int(11) AUTO_INCREMENT PRIMARY KEY, 
+            `id_registro` int(11) AUTO_INCREMENT PRIMARY KEY, 
             `datetime_registro` DATETIME NOT NULL, 
-            `lugar_ registro` int(11),
-            id_vehiculos INT NOT NULL,
+            `lugar_registro` int(11),
+            id_vehiculos INT NULL,
             INDEX (id_vehiculos),
             FOREIGN KEY (id_vehiculos) REFERENCES vehiculos(id_vehiculos),
             `disponibilidad` varchar(45) NOT NULL
@@ -38,7 +38,7 @@ PASO 1 CREAR TABLAS
 
 PASO 2 INSERTAR PUESTOS
 
-        INSERT INTO `registro` (`id_ingreso`, `datetime_registro`, `lugar_registro`, `id_vehiculos`, `disponibilidad`) 
+        INSERT INTO `registro` (`id_registro`, `datetime_registro`, `lugar_ registro`, `id_vehiculos`, `disponibilidad`) 
 
         VALUES (NULL, '2022-11-09 00:00:00', '1', NULL, 'disponible'),
             (NULL, '2022-11-09 00:00:00', '2', NULL, 'disponible'),

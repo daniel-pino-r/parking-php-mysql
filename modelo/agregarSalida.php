@@ -9,10 +9,10 @@
     $fecha=$_POST['fecha'];
 
 
-    $query = "UPDATE ingreso SET fechaHora_ingreso='2022-11-22 00:00:00', id_vehiculos = NULL, disponibilidad='disponible' WHERE id_vehiculos ='$vehiculo'";
+    $query = "UPDATE registro SET datetime_registro='2022-11-22 00:00:00', id_vehiculos = NULL, disponibilidad='disponible' WHERE id_vehiculos ='$vehiculo'";
     $result=mysqli_query($conn, $query);
 
-    $query = "INSERT INTO salida (id_salida, fechaHora_salida, id_vehiculos) VALUES (NULL, '$fecha', '$vehiculo')";
+    $query = "INSERT INTO salida (id_salida, datetime_salida, id_vehiculos) VALUES (NULL, '$fecha', '$vehiculo')";
     $result=mysqli_query($conn, $query);
 
     if (($result = mysqli_query($conn, $query)) === false) {

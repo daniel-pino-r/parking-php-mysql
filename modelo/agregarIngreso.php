@@ -10,7 +10,7 @@
     $fecha = $_POST['fecha'];
     $disponibilidad = "ocupado";
 
-    $query = "UPDATE ingreso SET fechaHora_ingreso='$fecha', lugar_ingreso='$puesto', id_vehiculos='$vehiculo', disponibilidad='$disponibilidad' WHERE lugar_ingreso ='$puesto'";
+    $query = "UPDATE registro SET datetime_registro='$fecha', lugar_registro='$puesto', id_vehiculos ='$vehiculo', disponibilidad='$disponibilidad' WHERE lugar_registro ='$puesto'";
 
     $result=mysqli_query($conn, $query);
 

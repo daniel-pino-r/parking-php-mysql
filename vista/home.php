@@ -12,17 +12,23 @@
 
 <a href="../vista/index.php"><input class="close" type="button" value="Cerrar sesion"></a>
     <section class="principal">
-      <h1 class="titulo">Parqueadero</h1>
+      <h1 class="titulo">Parking</h1>
 
         <div class="cards">
 
         <div class="card">
             <form action="../modelo/agregarVehiculo.php" method="post" >
-                <h2>Ingresar Vehiculo</h2>
+                <h2>1. Ingresar Vehiculo</h2>
                             <div class="input-container">		
                                 <input type="text" name="placa" required/>
                                 <label>Placa</label>
                             </div>
+
+                            <div class="input-container">		
+                                <input type="text" name="nombre" required/>
+                                <label>Nombre persona</label>
+                            </div>
+
                             <select name="tipo" id="tipo">
                                 <option value="">Tipo:</option>
                                 <option value="carro">Carro</option>
@@ -35,10 +41,9 @@
 
             <div class="card">
              <form action="../modelo/agregarIngreso.php" method="post" name="ingreso">
-                <h2>Ingreso</h2>
-            
+                <h2>2. Ingreso parking</h2>
                 <select name="transporte" class="vehiculos">
-                        <option value="0">Vehiculos:</option>
+                        <option value="0">Vehiculos:</option>   
                         <?php
                             require_once("../controlador/conexion.php");       
                             $conn = OpenCon(); 
@@ -46,7 +51,7 @@
                 
                         while ($fila=mysqli_fetch_array($consulta)) {
 
-                            echo '<option value="'.$fila["id_vehiculos"].'">'.$fila["tipo_vehiculos"].' - '.$fila["placa_vehiculos"].'</option>';
+                            echo '<option value="'.$fila["id_vehiculos"].'">'.$fila["tipo_vehiculos"].' - '.$fila["placa_vehiculos"].' - '.$fila["nombre_vehiculos"].'</option>';
                         
                         }
                         CloseCon($conn);
@@ -58,11 +63,11 @@
                         <?php
                             require_once("../controlador/conexion.php");       
                             $conn = OpenCon(); 
-                            $consulta=mysqli_query($conn, "SELECT * FROM ingreso WHERE disponibilidad = 'disponible'");
+                            $consulta=mysqli_query($conn, "SELECT * FROM registro WHERE disponibilidad = 'disponible'");
                 
                         while ($fila=mysqli_fetch_array($consulta)) {
 
-                            echo '<option value="'.$fila["lugar_ingreso"].'">'.$fila["lugar_ingreso"].' - '.$fila["disponibilidad"].'</option>';
+                            echo '<option value="'.$fila["lugar_registro"].'">'.$fila["lugar_registro"].' - '.$fila["disponibilidad"].'</option>';
                         
                         }
                         CloseCon($conn);
@@ -80,16 +85,16 @@
 
             <div class="card">
                 <form action="../modelo/agregarSalida.php" method="post" name="salida">
-                <h2>Salida</h2>
+                <h2>3. Salida</h2>
                              <select name="transporte" >
-                                    <option value="0">Vehiculos:</option>
+                                    <option value="0">Puesto a salir:</option>
                                     <?php
                                         require_once("../controlador/conexion.php");       
                                         $conn = OpenCon(); 
-                                        $consulta=mysqli_query($conn, "SELECT * FROM ingreso WHERE disponibilidad = 'ocupado'");
+                                        $consulta=mysqli_query($conn, "SELECT * FROM registro WHERE disponibilidad = 'ocupado'");
                             
                                     while ($fila=mysqli_fetch_array($consulta)) {
-                                        echo '<option value="'.$fila["id_vehiculos"].'">'.$fila["id_vehiculos"].' </option>';
+                                        echo '<option value="'.$fila["id_vehiculos"].'">'.$fila["lugar_registro"].' </option>';
                                     
                                     }
                                     CloseCon($conn);
@@ -113,10 +118,10 @@
                         <?php
                             require_once("../controlador/conexion.php");       
                             $conn = OpenCon(); 
-                            $consulta=mysqli_query($conn, "SELECT * FROM ingreso");
+                            $consulta=mysqli_query($conn, "SELECT * FROM registro");
 
                             while ($fila=mysqli_fetch_array($consulta)) {                   
-                                echo "<button class='".$fila["disponibilidad"]."'>".$fila["lugar_ingreso"]."</button>";
+                                echo "<button class='".$fila["disponibilidad"]."'>".$fila["lugar_registro"]."</button>";
                             }
                             CloseCon($conn);
                         ?>
@@ -125,10 +130,6 @@
             </div>
         </div>
     </section>
-     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-      <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-      <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <script src="js/main.js"></script>
+
 </body>
 </html>

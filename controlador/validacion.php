@@ -8,7 +8,7 @@
     $nombre = $_POST['user'];
     $password = $_POST['password'];
     
-    $consulta = mysqli_query ($conn, "SELECT * FROM loggin WHERE usuario_loggin= '$nombre' AND password_loggin = '$password'");
+    $consulta = mysqli_query ($conn, "SELECT * FROM validar WHERE nombre_validar = '$nombre' AND contra_validar = '$password'");
 
     if(!$consulta){
         echo mysqli_error($mysqli);

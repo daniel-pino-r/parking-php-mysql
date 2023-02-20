@@ -1,0 +1,75 @@
+
+// CREAR TABLAS DB PARQUEADERO
+
+PASO 1 CREAR TABLAS
+
+        CREATE TABLE `validar` (  
+            `id` int(11) AUTO_INCREMENT PRIMARY KEY, 
+            `nombre ` varchar(45) NOT NULL , 
+            `contra ` varchar(45) NOT NULL
+        );
+
+
+        CREATE TABLE `vehiculos` (  
+            `id_vehiculos` int(11) AUTO_INCREMENT PRIMARY KEY, 
+            `tipo` varchar(45) NOT NULL , 
+            `placa` varchar(45) NOT NULL,
+            `nombre` varchar(45) NOT NULL
+        );
+
+        CREATE TABLE `registro` (  
+            `id_ registro` int(11) AUTO_INCREMENT PRIMARY KEY, 
+            `datetime_registro` DATETIME NOT NULL, 
+            `lugar_ registro` int(11),
+            id_vehiculos INT NOT NULL,
+            INDEX (id_vehiculos),
+            FOREIGN KEY (id_vehiculos) REFERENCES vehiculos(id_vehiculos),
+            `disponibilidad` varchar(45) NOT NULL
+        );
+
+        CREATE TABLE `salida` (  
+            `id_salida` int(11) AUTO_INCREMENT PRIMARY KEY, 
+            `datetime_salida` DATETIME NOT NULL, 
+            id_vehiculos INT NOT NULL,
+            INDEX (id_vehiculos),
+            FOREIGN KEY (id_vehiculos) REFERENCES vehiculos(id_vehiculos)
+        );
+
+
+PASO 2 INSERTAR PUESTOS
+
+        INSERT INTO `registro` (`id_ingreso`, `datetime_registro`, `lugar_registro`, `id_vehiculos`, `disponibilidad`) 
+
+        VALUES (NULL, '2022-11-09 00:00:00', '1', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '2', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '3', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '4', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '5', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '6', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '7', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '8', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '9', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '10', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '11', NULL , 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '12', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '13', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '14', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '15', NULL , 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '16', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '17', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '18', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '19', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '20', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '21', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '22', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '23', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '24', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '25', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '26', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '27', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '28', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '29', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '30', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '31', NULL, 'disponible'),
+            (NULL, '2022-11-09 00:00:00', '32', NULL, 'disponible')
+        ;

@@ -6,7 +6,7 @@
 
 VIDEO DE YOUTUBE:
 
-[![Alt text](https://www.youtube.com/watch?v=h4aQ1jWTKbQ)](https://www.youtube.com/watch?v=h4aQ1jWTKbQ)
+[![Alt text](https://img.youtube.com/vi/h4aQ1jWTKbQ/0.jpg)](https://www.youtube.com/watch?v=h4aQ1jWTKbQ)
 
 
 

@@ -4,3 +4,9 @@
 - CREAR BASE DE DATOS CON EL NOMBRE ESPECIFICADO
 - AGREGAR LA BASE DE DATOS MEDIANTE PHPMYADMIN O MYSQLWORKBECNH
 
+VIDEO DE YOUTUBE:
+
+[![Alt text](https://www.youtube.com/watch?v=h4aQ1jWTKbQ)](https://www.youtube.com/watch?v=h4aQ1jWTKbQ)
+
+
+
